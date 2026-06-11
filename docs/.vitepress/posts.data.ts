@@ -1,14 +1,20 @@
 import { createContentLoader } from 'vitepress'
 
+interface Post {
+  title: string
+  url: string
+  order: number
+}
+
 export default createContentLoader('posts/*.md', {
-  transform(raw) {
+  transform(raw): Post[] {
     return raw
-      .filter(post => post.url !== '/posts/')   // 排除 posts/index.md 自身
+      .filter(post => post.url !== '/posts/')
       .map(post => ({
-        title: post.frontmatter.title || post.url.replace(/^.*\//, '').replace('.html', ''),
+        title: post.frontmatter.title || '',
         url: post.url,
-        order: post.frontmatter.order ?? 9999  // 默认极大值，没写 order 的文章排最后
+        order: post.frontmatter.order ?? 9999
       }))
-      .sort((a, b) => a.order - b.order)       // 升序排列，order 小的在前
+      .sort((a, b) => a.order - b.order)
   }
 })
