@@ -1,0 +1,15 @@
+/* 浅色模式 */
+:root {
+  --vp-c-brand-1: #C4935E;
+  --vp-c-brand-2: #F2CB95;
+  --vp-c-brand-3: #9E7644;
+}
+
+/* 暗色模式 */
+.dark {
+  --vp-c-brand-1: #F2CB95;
+  --vp-c-brand-2: #D4A96A;
+  --vp-c-brand-3: #B38B4A;
+}
+
+/* 可选：确保按钮上的文字清晰（暗背景时自动反白，一般无需改动） */
