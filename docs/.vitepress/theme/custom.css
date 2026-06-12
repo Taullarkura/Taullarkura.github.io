@@ -12,4 +12,83 @@
   --vp-c-brand-3: #B38B4A;
 }
 
-/* 可选：确保按钮上的文字清晰（暗背景时自动反白，一般无需改动） */
+/* 主标题字号微调，保持优雅 */
+.VPHomeHero .name {
+  font-size: 3rem !important;
+  font-weight: 700;
+}
+.VPHomeHero .text {
+  font-size: 1.8rem !important;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* 按钮圆角更柔和 */
+.VPButton {
+  border-radius: 8px !important;
+}
+
+/* 特性卡片增加轻微悬浮效果 */
+.VPFeature {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.VPFeature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+/* 选中第 2 个特性卡片的描述 */
+.VPFeature:nth-child(2) .details {
+  color: #C4935E;  /* 你的颜色 */
+}
+/* ---------- 入场动画 ---------- */
+/* 定义淡入上移动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 初始状态隐藏，动画填充向前 */
+.VPHomeHero .name,
+.VPHomeHero .text,
+.VPHomeHero .tagline,
+.VPHomeHero .actions,
+.VPHomeFeatures .VPFeature {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0; /* 初始透明，动画会覆盖 */
+}
+
+/* 依次延迟，制造层次感 */
+.VPHomeHero .name {
+  animation-delay: 0.1s;
+}
+.VPHomeHero .text {
+  animation-delay: 0.2s;
+}
+.VPHomeHero .tagline {
+  animation-delay: 0.3s;
+}
+.VPHomeHero .actions {
+  animation-delay: 0.4s;
+}
+
+/* 特性卡片逐张延迟 */
+.VPHomeFeatures .VPFeature:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.VPHomeFeatures .VPFeature:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.VPHomeFeatures .VPFeature:nth-child(3) {
+  animation-delay: 0.7s;
+}
+/* 给 hero 图标添加浮现动画 */
+.VPHomeHero .image {
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: 0s;          /* 最先出现 */
+}
