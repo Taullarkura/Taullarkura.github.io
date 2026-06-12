@@ -92,3 +92,10 @@
   animation: fadeInUp 0.6s ease forwards;
   animation-delay: 0s;          /* 最先出现 */
 }
+.lor {
+  color: #C4935E;
+}
+.lor-bold {
+  color: #C4935E;
+  font-weight: bold;
+}

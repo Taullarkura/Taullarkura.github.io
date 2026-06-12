@@ -86,6 +86,12 @@ export default defineConfig({
   title: "废墟图书馆mod教程",
   description: "测试用？",
   themeConfig: {
+    editLink: {
+      pattern: 'https://github.com/Taullarkura/Taullarkura.github.io/edit/main/docs/:path'
+    },
+    lastUpdated: {
+      text:"Last updated"
+    },
     nav: [
       { text: '首页', link: '/LorModTutoials' },
       { text: '文章', link: '/LorModTutoials/开始/前言' }
