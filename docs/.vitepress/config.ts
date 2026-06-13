@@ -82,6 +82,14 @@ function getTutorialSidebar() {
 }
 // 其余配置
 export default defineConfig({
+   head: [
+    ['script',
+      {
+        src: '//gc.zgo.at/count.js',
+        async:"true",
+        'data-goatcounter': 'https://taullarkura.goatcounter.com/count'
+      }]
+  ],
   base: "/",
   title: "废墟图书馆mod教程",
   description: "测试用？",
